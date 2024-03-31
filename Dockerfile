@@ -2,7 +2,7 @@
 FROM nvidia/cuda:12.3.2-runtime-ubuntu22.04
 
 WORKDIR /usr/local/agent
-RUN groupadd -g 1001 clearm1 && useradd -u 1001 -g clearml clearml
+RUN groupadd -g 1001 clearml && useradd -u 1001 -g clearml clearml
 COPY . /usr/local/agent
 
 RUN apt-get update
