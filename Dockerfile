@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile
-FROM nvidia/cuda
+FROM nvidia/cuda:runtime
 
 WORKDIR /usr/local/agent
 RUN groupadd -g 1001 clearm1 && useradd -u 1001 -g clearml clearml
