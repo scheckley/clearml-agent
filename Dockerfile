@@ -2,10 +2,20 @@
 FROM nvidia/cuda:12.3.2-runtime-ubuntu22.04
 
 WORKDIR /usr/local/agent
+
+# Add clearml user
 RUN groupadd -g 1001 clearml && useradd -u 1001 -g clearml clearml
 
+RUN chown -R clearml:root /home/clearml && \
+    chgrp -R 0 /home/clearml && \
+    chmod -R 775 /home/clearml 
+##Specify the user with UID
+USER 1001
+
+RUN chown -R clearml:clearml /usr/local/agent
 RUN chgrp -R 0 /usr/local/agent && \
     chmod -R g=u /usr/local/agent
+
 
 COPY . /usr/local/agent
 
