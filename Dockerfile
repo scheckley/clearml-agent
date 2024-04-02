@@ -14,7 +14,8 @@ RUN chown -R clearml:clearml /usr/local/agent && \
 
 USER 1001
 
-COPY . /usr/local/agent
+COPY ./entrypoint.sh /usr/local/agent
+COPY ./clearml.conf /home/clearml
 
 USER root 
 
