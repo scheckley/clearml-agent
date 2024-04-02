@@ -10,13 +10,15 @@ RUN groupadd -g 1001 clearml && useradd -u 1001 -g clearml clearml
 RUN chown -R clearml:clearml /usr/local/agent && \
     chgrp -R 0 /usr/local/agent && \
     chmod -R 775 /usr/local/agent
-##Specify the user with UID as OpenShift assigns random
+#Specify the user with UID as OpenShift assigns random
 
 USER 1001
 
 COPY . /usr/local/agent
 
 USER root 
+
+RUN chmod +x /usr/local/agent/entrypoint.sh
 
 RUN apt-get update
 RUN apt-get dist-upgrade -y
