@@ -4,8 +4,9 @@ FROM nvidia/cuda:12.3.2-runtime-ubuntu22.04
 WORKDIR /usr/local/agent
 
 # Add clearml user
-RUN groupadd -g 1001 clearml && useradd -u 1001 -g clearml clearml
+RUN useradd -rm -d /home/clearml -s /bin/bash -g root -G sudo -u 1001 clearml
 
+# Add permissions
 RUN chown -R clearml:root /home/clearml && \
     chgrp -R 0 /home/clearml && \
     chmod -R 775 /home/clearml 
