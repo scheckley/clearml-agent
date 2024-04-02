@@ -12,9 +12,6 @@ RUN chown -R clearml:clearml /usr/local/agent && \
     chmod -R 775 /usr/local/agent
 ##Specify the user with UID as OpenShift assigns random
 
-RUN adduser clearml sudo
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
 USER 1001
 
 COPY . /usr/local/agent
