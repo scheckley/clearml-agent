@@ -16,6 +16,8 @@ USER 1001
 
 COPY . /usr/local/agent
 
+USER ROOT 
+
 RUN apt-get update
 RUN apt-get dist-upgrade -y
 RUN apt-get install -y curl python3-pip git
