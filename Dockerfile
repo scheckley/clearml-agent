@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile
-FROM nvidia/cuda:12.3.2-runtime-ubuntu22.04
+FROM nvidia/cuda:12.4.1-runtime-ubuntu22.04
 
 WORKDIR /usr/local/agent
 
