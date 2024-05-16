@@ -29,6 +29,4 @@ RUN python3 -m pip install -U pip
 RUN python3 -m pip install clearml-agent
 RUN python3 -m pip install -U "cryptography>=2.9"
 
-ENV CLEARML_DOCKER_SKIP_GPUS_FLAG=1
-
 ENTRYPOINT ["/usr/local/agent/entrypoint.sh"]
