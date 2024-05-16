@@ -5,12 +5,15 @@ WORKDIR /usr/local/agent
 
 # Add clearml user
 RUN groupadd -g 1001 clearml && useradd -u 1001 -g clearml clearml
+RUN mkdir /home/clearml
+RUN mkdir /.clearml
 
 #Add permissions
 RUN chown -R clearml:clearml /usr/local/agent && \
     chgrp -R 0 /usr/local/agent && \
     chmod -R 775 /usr/local/agent && \
-    chmod -R 775 /home/clearml
+    chmod -R 775 /home/clearml && \
+    chmod -R 775 /.clearml
 #Specify the user with UID as OpenShift assigns random
 
 USER 1001
