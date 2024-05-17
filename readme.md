@@ -2,7 +2,7 @@
 
 An attempt to build a rootless clearml-agent container for use on openshift. 
 
-Currently it needs integration of nvidia cuda driver.uusr/
+Currently it needs integration of nvidia cuda drivers, or possibly stfc systems are fubar.
 
 ```
 docker build . -t scheckley/clearml-agent:latest
