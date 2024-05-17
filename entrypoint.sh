@@ -17,4 +17,4 @@ elif [ ! -z "$LOWER_CLEARML_AGENT_UPDATE_VERSION" ] ; then
 fi
 
 #python3 -m clearml_agent daemon --gpus all --docker "${CLEARML_AGENT_DEFAULT_BASE_DOCKER:-$TRAINS_AGENT_DEFAULT_BASE_DOCKER}" --force-current-version ${CLEARML_AGENT_EXTRA_ARGS:-$TRAINS_AGENT_EXTRA_ARGS}
-python3 -m clearml-agent daemon --queue gpu --gpus all -d
+python3 -m clearml_agent daemon --queue gpu --gpus all -d
