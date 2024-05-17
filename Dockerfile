@@ -1,10 +1,6 @@
 # syntax = docker/dockerfile
 FROM nvidia/cuda:12.4.1-runtime-ubuntu22.04
 
-ENV NVIDIA_VISIBLE_DEVICES all
-ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
-ENV NVIDIA_REQUIRE_CUDA "cuda>=10.0"
-
 WORKDIR /usr/local/agent
 
 # Add clearml user
