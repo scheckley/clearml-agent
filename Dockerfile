@@ -27,10 +27,6 @@ RUN chmod +x /usr/local/agent/entrypoint.sh
 
 RUN apt-get update
 RUN apt-get dist-upgrade -y
-RUN apt-get -y install cuda-drivers
-RUN apt-get -y install nvidia-driver-550
-RUN apt-get -y install cuda-drivers-550
-RUN apt-get -y install nvidia-cuda-toolkit
 RUN apt-get install -y curl python3-pip git
 RUN curl -sSL https://get.docker.com/ | sh
 RUN python3 -m pip install -U pip
