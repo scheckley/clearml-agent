@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  clearml-agent-k8
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clearml-agent-k8
+  template:
+    metadata:
+      labels:
+        app: clearml-agent-k8
+
+image:
+  repository: dockerhub.io/scheckley/clearml-agent
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 443
+
+resources:
+  limits:
+    cpu: '4'
+    memory: '64Gi'
+  requests:
+    cpu: '8'
+    memory: '64Gi'
+    nvidia.com/gpu: '1'
+    nodeName: 'ocp-8q24t-worker-gpu-a100x4-dgjsp'
+
