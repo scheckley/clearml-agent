@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: clearml-agent-k8
+  name: clearml-agent
   labels:
     app: clearml-agent
 spec:
@@ -37,6 +37,4 @@ spec:
         runAsUser: 1001
         runAsGroup: 1001
         fsGroup: 1001
-      nodeSelector:
-        kubernetes.io/hostname: 'ocp-8q24t-worker-gpu-a100x4-2slpc'
-
+      nodeName: 'ocp-8q24t-worker-gpu-a100x4-2slpc'
