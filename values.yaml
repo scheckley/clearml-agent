@@ -20,6 +20,9 @@ spec:
             - name: http
               containerPort: 443
               protocol: TCP
+          envFrom:
+            - secretRef:
+                name: clearml-api-host
           resources:
             limits:
               cpu: '8'
