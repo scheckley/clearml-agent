@@ -2,15 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: clearml-agent-k8
+  labels:
+    app: clearml-agent
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: clearml-app
+      app: clearml-agent
   template:
     metadata:
       labels:
-        app: clearml-app
+        app: clearml-agent
     spec:
       containers:
         - name: clearml-agent
