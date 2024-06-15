@@ -1,6 +1,6 @@
 ## Rootless clearml-agent container
 
-An attempt to build a rootless clearml-agent container for use on openshift. 
+An attempt to build a rootless clearml-agent container for use on openshift. Doesn't currently deploy from oc or kubectl because of course it doesn't.
 
 
 ```
